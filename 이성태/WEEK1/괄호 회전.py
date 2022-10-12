@@ -23,6 +23,9 @@ def solution(s):
     l = len(s)
     ans = 0
 
+    if len(s) % 2:
+        return ans
+
     for i in range(l):
         ans += is_valid(s, i, l)
 
