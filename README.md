@@ -18,7 +18,7 @@
 1.
     - 순서: 김가은
     - 기간: 2022-10-10 ~ 2022-10-16
-    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/76502 (괄호 회전하기)
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/76502 (프로그래머스 2단계 괄호 회전하기)
     </br>
 
 
