@@ -15,5 +15,17 @@ function solution(s) {
 }
 
 // 최종 풀이 2
+function solution2(s) {
+  let answer = 0;
 
-// s  = s.replace(/(\(\)|{}|\[\])/g, '');
+  for (let i = 0; i < s.length; i++) {
+    let tempS = s;
+
+    while (/(\(\)|{}|\[\])/g.test(tempS)) {
+      tempS = tempS.replace(/(\(\)|{}|\[\])/g, "");
+    }
+    if (tempS.length === 0) answer++;
+    s = (s + s[0]).slice(1);
+  }
+  return answer;
+}
