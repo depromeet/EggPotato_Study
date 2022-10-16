@@ -20,6 +20,11 @@
     - 기간: 2022-10-10 ~ 2022-10-16
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/76502 (프로그래머스 2단계 괄호 회전하기)
     </br>
+1.
+    - 순서: 김문규
+    - 기간: 2022-10-17 ~ 2022-10-23
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/42885 (프로그래머스 2단계 구명보트)
+    </br>
 
 
 ### 기타 주의사항
