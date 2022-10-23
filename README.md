@@ -25,7 +25,10 @@
     - 기간: 2022-10-17 ~ 2022-10-23
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/42885 (프로그래머스 2단계 구명보트)
     </br>
-
+1.
+    - 순서: 김해나
+    - 기간: 2022-10-24 ~ 2022-10-30
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/72412 (프로그래머스 2단계 순위 검색)
 
 ### 기타 주의사항
 - 본인 이름으로 폴더를 생성한다. 
