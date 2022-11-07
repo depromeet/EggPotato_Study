@@ -1,0 +1,66 @@
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+# 방향 탐색
+dx = [1, 0, -1, 0]
+dy = [0, 1, 0, -1]
+
+graph = []
+answer = 0 
+
+def BFS(x, y, flag) : 
+  q = deque()              
+  q.append((x, y))          
+  
+  visited = [[0]*6 for i in range(12)]       # 연속된 뿌요의 경우 1 로 변경할 예정
+  visited[x][y] = 1                          # 현재 뿌요 방문 처리
+  cnt = 1                                    # cnt : 인접한 뿌요 개수
+
+  while q :
+    x, y = q.popleft()
+    for i in range(4) :                      # 네 방향 순회
+      nx = x+dx[i]                           # nx : 이동할 x 좌표
+      ny = y+dy[i]                           # ny : 이동할 y 좌표
+      if 0 <= nx < 12 and 0 <= ny < 6 :      # nx, ny 가 범위에 벗어나지 않았다면
+        if graph[nx][ny] == graph[x][y] and visited[nx][ny] == 0 :        # 현재 뿌요와 같은 문자이고 아직 방문하지 않았다면
+          cnt += 1
+          visited[nx][ny] = 1                # visited 방문 처리
+          q.append((nx, ny))
+          
+  if cnt >= 4 :                              # 인접한 뿌요가 4개 이상이라면
+    flag = True
+    for i in range(12) :
+      for j in range(6) :
+        if visited[i][j] == 1 :              # 방문 처리됐다면 연속된 뿌요라는 의미니까 터뜨리기 => . 으로 변경
+          graph[i][j] = '.'
+  return flag
+
+def Down() :                                 # 터뜨린 후 아래로 내려오게 하는 함수
+  for i in range(10, -1, -1) :               # 아래서부터 올라오는 방향 (맨 아랫줄 제외)
+    for j in range(6) :
+      if graph[i][j] != '.' and graph[i+1][j] == '.' :          # 자신의 아래칸이 비어 있다면 한 칸 아래로 이동
+        for k in range(i+1, 12) :
+          if k == 11 and graph[k][j] == '.' :
+            graph[k][j] = graph[i][j]
+          elif graph[k][j] != '.' :     
+            graph[k-1][j] = graph[i][j]
+            break
+        graph[i][j] = '.'
+
+for i in range(12) :
+  graph.append(list(input().strip())) 
+  
+while True : 
+  flag = False
+  for i in range(12) :
+    for j in range(6) :
+      if graph[i][j] != '.' :            # graph[i][j] 가 . 이 아닌 문자라면
+        flag = BFS(i, j, flag)           # BFS() 함수에 (좌표값, flag) 전달하여 호출
+        
+  if flag :
+    answer += 1
+  else :
+    print(answer)
+    break 
+  Down()
