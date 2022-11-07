@@ -35,6 +35,10 @@
     - 기간: 2022-10-31 ~ 2022-11-7
     - 문제: https://www.acmicpc.net/problem/11559 (백준 11559 Puyo Puyo 골드 4)
     </br>
+1. 
+    - 순서: 정대윤
+    - 기간: 2022-11-8 ~ 2022-11-14
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/118669?language=javascript (프로그래머스 3단계 등산코스 정하기)
 
 ### 기타 주의사항
 - 본인 이름으로 폴더를 생성한다. 
