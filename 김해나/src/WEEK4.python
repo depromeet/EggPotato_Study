@@ -1,0 +1,66 @@
+import sys
+from collections import deque
+input = sys.stdin.readline
+
+# 방향 탐색
+dx = [1, 0, -1, 0]
+dy = [0, 1, 0, -1]
+
+graph = []
+answer = 0 
+
+def BFS(x, y, flag) :
+  q = deque()              
+  q.append((x, y))          
+  
+  visited = [[0]*6 for i in range(12)]    # 연속된 뿌요의 경우 1 로 변경할 예정
+  cnt = 1
+  visited[x][y] = cnt
+
+  while q :
+    x, y = q.popleft()
+    for i in range(4) :
+      nx = x+dx[i]
+      ny = y+dy[i]
+      if 0 <= nx < 12 and 0 <= ny < 6 :
+        if graph[nx][ny] == graph[x][y] and visited[nx][ny] == 0 :      # 현재 뿌요와 같은 문자이고 아직 방문하지 않았다면
+          cnt += 1
+          visited[nx][ny] = 1
+          q.append((nx, ny))
+          
+  if cnt >= 4 :                    # cnt 가 4개 이상이라면
+    flag += 1
+    for i in range(12) :
+      for j in range(6) :
+        if visited[i][j] == 1 :    # 1 이면 연속된 뿌요니까 터뜨리기 => . 으로 변경
+          graph[i][j] = '.'
+  return flag
+
+def Down() :      # 아래로 내려오는 함수
+  for i in range(10, -1, -1) :
+    for j in range(6) :
+      if graph[i][j] != '.' and graph[i+1][j] == '.' :   # 자신의 아래칸이 비어 있다면 한 칸 아래로 이동
+        for k in range(i+1, 12) :
+          if k == 11 and graph[k][j] == '.' :
+            graph[k][j] = graph[i][j]
+          elif graph[k][j] != '.' :
+            graph[k-1][j] = graph[i][j]
+            break
+        graph[i][j] = '.'
+
+for i in range(12) :
+  graph.append(list(input().strip())) 
+  
+while True :
+  cnt = 0
+  for i in range(12) :
+    for j in range(6) :
+      if graph[i][j] != '.' :      # graph[i][j] 가 . 이 아닌 문자라면
+        cnt = BFS(i, j, cnt)       # BFS() 함수에 좌표값, cnt 전달하여 호출
+
+  if cnt == 0 :
+    print(answer)
+    break
+  else :
+    answer += 1
+  Down()
