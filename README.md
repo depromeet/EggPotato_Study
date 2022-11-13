@@ -20,25 +20,30 @@
     - 기간: 2022-10-10 ~ 2022-10-16
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/76502 (프로그래머스 2단계 괄호 회전하기)
     </br>
-1.
+2.
     - 순서: 김문규
     - 기간: 2022-10-17 ~ 2022-10-23
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/42885 (프로그래머스 2단계 구명보트)
     </br>
-1.
+3.
     - 순서: 김해나
     - 기간: 2022-10-24 ~ 2022-10-30
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/72412 (프로그래머스 2단계 순위 검색)
     </br>
-1.
+4.
     - 순서: 이성태
-    - 기간: 2022-10-31 ~ 2022-11-7
+    - 기간: 2022-10-31 ~ 2022-11-6
     - 문제: https://www.acmicpc.net/problem/11559 (백준 11559 Puyo Puyo 골드 4)
     </br>
-1. 
+5. 
     - 순서: 정대윤
-    - 기간: 2022-11-8 ~ 2022-11-14
+    - 기간: 2022-11-7 ~ 2022-11-13
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/118669?language=javascript (프로그래머스 3단계 등산코스 정하기)
+    </br>
+6. 
+    - 순서: 김가은
+    - 기간: 2022-11-14 ~ 2022-11-20
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/92341 (프로그래머스 2단계 주차 요금 계산)
 
 ### 기타 주의사항
 - 본인 이름으로 폴더를 생성한다. 
