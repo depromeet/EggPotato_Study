@@ -44,6 +44,10 @@
     - 순서: 김가은
     - 기간: 2022-11-14 ~ 2022-11-20
     - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/92341 (프로그래머스 2단계 주차 요금 계산)
+7.
+    - 순서: 김해나
+    - 기간: 2022-11-21 ~ 2022-11-27
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/17677
 
 ### 기타 주의사항
 - 본인 이름으로 폴더를 생성한다. 
