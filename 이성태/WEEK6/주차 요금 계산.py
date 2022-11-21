@@ -1,35 +1,37 @@
 from collections import deque
 import math
-# fees: 주차 요금을 나타내는 정수 배열
-# 기본 시간, 기본 요금, 단위 시간, 단위 요금
-# records: 자동차의 입/출차 내역을 나타내는 문자열 배열
-# 시각, 차량번호, 내역
+# fees = [기본 시간, 기본 요금, 단위 시간, 단위 요금]
+# records = [시각, 차량번호, 내역]
 
-# 기본적으로 맵 자료구조를 사용하며 값은
-# 큐를 사용하여, 저장 후 뽑아내기
+# 맵 자료구조를 사용하며 값은 큐를 사용
 
 
 def solution(fees, records):
     default_time, default_fee, unit_time, unit_fee = fees
 
-    # { 'event_car_number': [event_queue, total_fee]}'
-    total_fees = dict()
+    # { 'car_number': event_queue }'
+    in_out_history = dict()
 
     # records를 읽어와 정리
     for record in records:
-        event_time, event_car_number, _ = record.split()
-        if event_car_number not in total_fees:
-            event_queue = deque([event_time])
-            total_fees[event_car_number] = event_queue
-        else:
-            total_fees[event_car_number].append(event_time)
+        in_out, car_number, _ = record.split()
 
-    result_order = sorted(total_fees.keys())
+        # 입출차 기록 저장
+        if car_number not in in_out_history:
+            event_queue = deque([in_out])
+            in_out_history[car_number] = event_queue
+        else:
+            in_out_history[car_number].append(in_out)
+
+    # 출력은 차량번호를 기준으로 오름차순으로 정리해야 하므로
+    history_order = sorted(in_out_history.keys())
 
     result = []
-    for car in result_order:
-        events = total_fees[car]
-        fee = default_fee
+    for car in history_order:
+        # 해당 차량의 모든 입출차 기록
+        events = in_out_history[car]
+
+        total_fee = default_fee
         total_time = 0
 
         # 인덱스 기준으로 짝수면 입차, 홀수면 출차
@@ -42,12 +44,17 @@ def solution(fees, records):
 
         if len(events) % 2 != 0:
             total_time += (23 * 60 + 59) - entry_time
-        if total_time > default_time:
-            fee += calculate_fee(total_time, default_time, unit_time, unit_fee)
 
-        result.append(fee)
+        # 기본 시간보다 더 오래 주차했다면 추가 요금을 계산
+        if total_time > default_time:
+            total_fee += calculate_fee(total_time,
+                                       default_time, unit_time, unit_fee)
+
+        result.append(total_fee)
 
     return result
+
+# 추가 요금 계산 함수
 
 
 def calculate_fee(usage, base_time, per_time, per_fee):
@@ -55,6 +62,8 @@ def calculate_fee(usage, base_time, per_time, per_fee):
     extra_time = math.ceil(time_diff / per_time)
     extra_fee = extra_time * per_fee
     return extra_fee
+
+# 계산하기 편하도록 모두 분으로 통일해주는 함수
 
 
 def change_to_minutes(timestamp):
