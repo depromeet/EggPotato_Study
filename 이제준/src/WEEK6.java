@@ -8,11 +8,11 @@ class Solution {
     public int[] solution(int[] fees, String[] records) {
 
         // 해시맵 정렬
-        Comparator<String> comparator = (o1, o2) -> o1.compareTo(o2);
+        Comparator<String> comparator = Comparator.naturalOrder();
         parkTime = new TreeMap<>(comparator);
 
-        for (int i = 0; i < records.length; i++) {
-            String[] data = records[i].split(" ");
+        for (String record : records) {
+            String[] data = record.split(" ");
             // 출차등록
             if (data[2].equals("IN")) {
                 int time = parsingTime(data[0]);
