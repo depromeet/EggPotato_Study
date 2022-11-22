@@ -1,3 +1,4 @@
+// 최종 풀이
 function solution(fees, records) {
   let obj = {};
   let answerObj = {};
