@@ -15,11 +15,11 @@ queue2 = [1, 5]
 
 def solution(queue1, queue2):
     queue1, queue2 = deque(queue1), deque(queue2)
-    min_depth = len(queue1) * 3 - 2
+    min_depth = len(queue1) * 3 - 3
     sum1, sum2 = sum(queue1), sum(queue2)
     depth = 0
 
-    while depth < min_depth:
+    while depth <= min_depth:
         try:
             if sum1 > sum2:
                 element = queue1.popleft()
