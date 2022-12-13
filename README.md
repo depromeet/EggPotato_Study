@@ -64,7 +64,7 @@
 10.
     - 순서: 정대윤
     - 기간: 2022-12-13 ~ 2022-12-19
-    - 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/77485
+    - 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/77485 (프로그래머스 2단계 행렬 테두리 회전하기)
     </br>
 
 ### 기타 주의사항
