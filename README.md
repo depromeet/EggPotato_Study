@@ -61,7 +61,12 @@
     - 기간: 2022-12-5 ~ 2022-12-11
     - 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/132265 (프로그래머스 2단계 롤케이크 자르기)
     </br>
-    
+10.
+    - 순서: 정대윤
+    - 기간: 2022-12-13 ~ 2022-12-19
+    - 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/77485
+    </br>
+
 ### 기타 주의사항
 - 본인 이름으로 폴더를 생성한다. 
 - 각 문제 풀이가 포함된 파일명에 문제 번호를 포함한다. (Ex: WEEK5.js)
