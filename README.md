@@ -66,6 +66,13 @@
     - 기간: 2022-12-13 ~ 2022-12-19
     - 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/77485 (프로그래머스 2단계 행렬 테두리 회전하기)
     </br>
+   
+11. 
+    - 순서: 김가은
+    - 기간: 2022-12-20 ~ 2022-12-26
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/17680
+    </br>
+    
 
 ### 기타 주의사항
 - 본인 이름으로 폴더를 생성한다. 
