@@ -1,0 +1,35 @@
+from collections import defaultdict
+import math
+   
+def solution(fees, records):
+  answer = []
+  enter = defaultdict(int)        
+  charge = defaultdict(int)        
+  numbers = []
+
+  for i in range(len(records)) :
+    time, num, io = records[i].split(" ")
+    hour, minute = time.split(":")
+    total = int(hour)*60 + int(minute)
+
+    if io == 'IN' :
+      enter[num] = total 
+      numbers.append(num)
+    else : 
+      total = total - enter[num]
+      charge[num] += total
+      numbers.remove(num)
+        
+  for num in numbers :
+    total = 23*60+59 - enter[num]
+    charge[num] += total
+
+  for car, total in charge.items() :
+    if total > fees[0] :
+      charge[car] = fees[1] + math.ceil((total - fees[0]) / fees[2]) * fees[3]
+    else :
+      charge[car] = fees[1]
+  for car, fee in sorted(charge.items()) :
+    answer.append(fee)
+    
+  return answer
