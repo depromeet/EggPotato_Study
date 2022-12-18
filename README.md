@@ -70,7 +70,7 @@
 11. 
     - 순서: 김가은
     - 기간: 2022-12-20 ~ 2022-12-26
-    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/17680
+    - 문제: https://school.programmers.co.kr/learn/courses/30/lessons/17680 (프로그래머스 2단계 [1차] 캐시)
     </br>
     
 
